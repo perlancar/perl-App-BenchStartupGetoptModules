@@ -1,0 +1,40 @@
+#!perl
+
+# DATE
+# VERSION
+
+use 5.010001;
+use strict;
+use warnings;
+
+use Benchmark::Command;
+
+Benchmark::Command::run(
+    undef,
+    {
+        'none'                => [$^X, "-e1"],
+        'G:Std'               => [$^X, "-e", "use Getopt::Std"],  #core
+        'G:Long'              => [$^X, "-e", "use Getopt::Long"], #core
+        'G:Long::Complete'    => [$^X, "-e", "use Getopt::Long::Complete"],
+        'G:Long::Descriptive' => [$^X, "-e", "use Getopt::Long::Descriptive"],
+        'G:Long::Subcommand'  => [$^X, "-e", "use Getopt::Long::Subcommand"],
+        'G:ArgvFile'          => [$^X, "-e", "use Getopt::ArgvFile"],
+        'G:Lucid'             => [$^X, "-e", "use Getopt::Lucid"],
+        'G:Std::Strict'       => [$^X, "-e", "use Getopt::Std::Strict"],
+        'MooseX::Getopt'      => [$^X, "-e", "use MooseX::Getopt"],
+    },
+);
+
+# ABSTRACT: Benchmark startup time of some popular Perl Getopt modules
+# PODNAME:
+
+=head1 SYNOPSIS
+
+ % bench-startup-getopt-modules
+
+Sample output:
+
+# COMMAND: perl bin/bench-startup-getopt-modules 2>&1
+
+
+=head1 SEE ALSO
