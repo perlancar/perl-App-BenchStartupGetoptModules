@@ -15,6 +15,8 @@ Benchmark::Command::run(
         'none'                => [$^X, "-e1"],
         'G:Std'               => [$^X, "-e", "use Getopt::Std"],  #core
         'G:Long'              => [$^X, "-e", "use Getopt::Long"], #core
+
+        'G:Long::Less'        => [$^X, "-e", "use Getopt::Long::Less"],
         'G:Long::Complete'    => [$^X, "-e", "use Getopt::Long::Complete"],
         'G:Long::Descriptive' => [$^X, "-e", "use Getopt::Long::Descriptive"],
         'G:Long::Subcommand'  => [$^X, "-e", "use Getopt::Long::Subcommand"],
