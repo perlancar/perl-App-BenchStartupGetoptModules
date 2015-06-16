@@ -1,0 +1,37 @@
+#!perl
+
+# DATE
+# VERSION
+
+use 5.010001;
+use strict;
+use warnings;
+
+use Benchmark::Command;
+
+Benchmark::Command::run(
+    undef,
+    {
+        'none'                => [$^X, "-e1"],
+        'GL'                  => [$^X, "-e", "use Getopt::Long"], #core
+
+        'GL::Less'            => [$^X, "-e", "use Getopt::Long::Less"],
+        'GL::Complete'        => [$^X, "-e", "use Getopt::Long::Complete"],
+        'GL::Descriptive'     => [$^X, "-e", "use Getopt::Long::Descriptive"],
+        'GL::Subcommand'      => [$^X, "-e", "use Getopt::Long::Subcommand"],
+    },
+);
+
+# ABSTRACT: Benchmark startup time of some popular Perl Getopt modules (Getopt::Long-related)
+# PODNAME:
+
+=head1 SYNOPSIS
+
+ % bench-startup-getopt-modules-gl
+
+Sample output:
+
+# COMMAND: perl bin/bench-startup-getopt-modules-gl
+
+
+=head1 SEE ALSO

@@ -16,27 +16,22 @@ Benchmark::Command::run(
         'G:Std'               => [$^X, "-e", "use Getopt::Std"],  #core
         'G:Long'              => [$^X, "-e", "use Getopt::Long"], #core
 
-        'G:Long::Less'        => [$^X, "-e", "use Getopt::Long::Less"],
-        'G:Long::Complete'    => [$^X, "-e", "use Getopt::Long::Complete"],
-        'G:Long::Descriptive' => [$^X, "-e", "use Getopt::Long::Descriptive"],
-        'G:Long::Subcommand'  => [$^X, "-e", "use Getopt::Long::Subcommand"],
         'G:ArgvFile'          => [$^X, "-e", "use Getopt::ArgvFile"],
         'G:Lucid'             => [$^X, "-e", "use Getopt::Lucid"],
         'G:Std::Strict'       => [$^X, "-e", "use Getopt::Std::Strict"],
-        'MooseX::Getopt'      => [$^X, "-e", "use MooseX::Getopt"],
     },
 );
 
-# ABSTRACT: Benchmark startup time of some popular Perl Getopt modules
+# ABSTRACT: Benchmark startup time of some popular Perl Getopt modules (etc)
 # PODNAME:
 
 =head1 SYNOPSIS
 
- % bench-startup-getopt-modules
+ % bench-startup-getopt-modules-etc
 
 Sample output:
 
-# COMMAND: perl bin/bench-startup-getopt-modules 2>&1
+# COMMAND: perl bin/bench-startup-getopt-modules-etc
 
 
 =head1 SEE ALSO

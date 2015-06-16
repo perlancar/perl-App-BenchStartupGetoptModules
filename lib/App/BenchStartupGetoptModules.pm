@@ -8,4 +8,6 @@ package App::BenchStartupGetoptModules;
 
 =head1 SYNOPSIS
 
-See the included script L<bench-startup-getopt-modules>.
+See the included scripts:
+
+#INSERT_EXECS_LIST

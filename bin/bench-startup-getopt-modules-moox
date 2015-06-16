@@ -1,0 +1,36 @@
+#!perl
+
+# DATE
+# VERSION
+
+use 5.010001;
+use strict;
+use warnings;
+
+use Benchmark::Command;
+
+Benchmark::Command::run(
+    undef,
+    {
+        'none'                => [$^X, "-e1"],
+        'G:Std'               => [$^X, "-e", "use Getopt::Std"],  #core
+        'G:Long'              => [$^X, "-e", "use Getopt::Long"], #core
+
+        'MooseX::Getopt'      => [$^X, "-e", "use MooseX::Getopt"],
+        #'MooX::Options'       => [$^X, "-e", "use MooX::Options"],
+    },
+);
+
+# ABSTRACT: Benchmark startup time of some popular Perl Getopt modules (Moo* family)
+# PODNAME:
+
+=head1 SYNOPSIS
+
+ % bench-startup-getopt-modules-moox
+
+Sample output:
+
+# COMMAND: perl bin/bench-startup-getopt-modules-moox
+
+
+=head1 SEE ALSO
