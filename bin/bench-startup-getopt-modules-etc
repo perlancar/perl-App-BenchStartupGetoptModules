@@ -18,11 +18,12 @@ Benchmark::Command::run(
 
         'G:ArgvFile'          => [$^X, "-e", "use Getopt::ArgvFile"],
         'G:Lucid'             => [$^X, "-e", "use Getopt::Lucid"],
+        'G:Panjang'           => [$^X, "-e", "use Getopt::Panjang"],
         'G:Std::Strict'       => [$^X, "-e", "use Getopt::Std::Strict"],
     },
 );
 
-# ABSTRACT: Benchmark startup time of some popular Perl Getopt modules (etc)
+# ABSTRACT: Benchmark startup time of some Perl Getopt modules (etc)
 # PODNAME:
 
 =head1 SYNOPSIS
